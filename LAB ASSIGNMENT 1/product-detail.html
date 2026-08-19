@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PINAKA Genshin Impact Chibi Figures Set | OTAKUVERSE</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Particle Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                OTAKU<span>VERSE</span> <span class="badge">⛩️ VAULT</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle Navigation">☰</button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html" class="cart-link">Cart <span class="cart-count">3</span></a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Single Product Details Layout -->
+        <div class="product-detail-layout">
+            <!-- Product Images Gallery -->
+            <div class="product-detail-gallery">
+                <img id="mainImage" src="https://m.media-amazon.com/images/I/71P6cDbbFuL._SL1500_.jpg" alt="PINAKA Genshin Chibi Figures" class="main-detail-img">
+                <div class="thumbnail-row">
+                    <img src="https://m.media-amazon.com/images/I/71P6cDbbFuL._SL1500_.jpg" class="thumbnail active" onclick="changeImage(this.src)" alt="Thumb 1">
+                    <img src="https://m.media-amazon.com/images/I/51qkIB5rQ1L._SL1024_.jpg" class="thumbnail" onclick="changeImage(this.src)" alt="Thumb 2">
+                    <img src="https://m.media-amazon.com/images/I/61m-Zz7uJfL._SL1500_.jpg" class="thumbnail" onclick="changeImage(this.src)" alt="Thumb 3">
+                </div>
+            </div>
+
+            <!-- Product Information -->
+            <div class="product-detail-info">
+                <div class="product-category">Amazon India Official Merch • PINAKA</div>
+                <h1 class="detail-title">PINAKA Genshin Impact Chibi Mini Action Figures Set</h1>
+
+                <div class="detail-meta">
+                    <span class="product-rating">★★★★★ (5.0 / 890 Reviews)</span>
+                    <span style="color: var(--success); font-weight: bold;">₹999 (In Stock)</span>
+                </div>
+
+                <div class="detail-price">$12.99 <del style="font-size: 1.1rem; color: var(--text-muted);">$18.99</del></div>
+
+                <p class="detail-description">
+                    Bring Teyvat to your study table or car dashboard! The <strong>PINAKA Genshin Impact Chibi Mini Action Figures Set</strong> includes highly detailed, multi-colored chibi figurines of your favorite Genshin Impact characters crafted from high-quality PVC die-cast material.
+                </p>
+
+                <!-- Technical Specifications -->
+                <ul class="specs-list">
+                    <li><strong>Product ASIN:</strong> B0GK9XWHT2</li>
+                    <li><strong>Material:</strong> Premium Non-Toxic PVC & ABS</li>
+                    <li><strong>Origin:</strong> Sourced via Amazon India Store</li>
+                    <li><strong>Includes:</strong> Multi-Character Chibi Collectible Figures Set</li>
+                </ul>
+
+                <!-- Quantity Selector -->
+                <div class="quantity-control">
+                    <label style="font-family: var(--font-heading); color: var(--text-secondary);">Quantity:</label>
+                    <button class="qty-btn" onclick="updateQty(-1)">-</button>
+                    <input type="number" id="qtyInput" class="qty-input" value="1" min="1" max="10">
+                    <button class="qty-btn" onclick="updateQty(1)">+</button>
+                </div>
+
+                <!-- Action Buttons -->
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button class="btn btn-primary" style="flex: 1; padding: 14px;" onclick="addDetailToCart()">
+                        🛒 Add to Cart
+                    </button>
+                    <a href="checkout.html" class="btn btn-secondary" style="flex: 1; padding: 14px;" onclick="addDetailToCart()">
+                        ⚡ Buy Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Common Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">OTAKU<span>VERSE</span></a>
+                    <p>Your premier sanctuary for authentic Japanese anime merchandise, scale figures, Genshin Impact collectibles, wall posters, and keychains.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Product Catalog</a></li>
+                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Action Figures</a></li>
+                        <li><a href="products.html">Acrylic Keychains</a></li>
+                        <li><a href="products.html">Wall Posters</a></li>
+                        <li><a href="products.html">Pendant Jewelry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>📍 COER University, Roorkee</li>
+                        <li>📧 support@otakuverse.store</li>
+                        <li>📞 +91 98765 43210</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 OTAKUVERSE Storefront. Full Stack Development Assignment - Mini E-Commerce Project. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="cart.js"></script>
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function updateQty(delta) {
+            const input = document.getElementById('qtyInput');
+            let val = parseInt(input.value) + delta;
+            if (val >= 1 && val <= 10) {
+                input.value = val;
+            }
+        }
+
+        function addDetailToCart() {
+            const qty = parseInt(document.getElementById('qtyInput').value) || 1;
+            addToCart({
+                id: 'pinaka-chibi-figures',
+                name: 'PINAKA Genshin Impact Chibi Mini Action Figures Set',
+                category: 'Action Figures',
+                price: 12.99,
+                image: 'https://m.media-amazon.com/images/I/71P6cDbbFuL._SL1500_.jpg',
+                qty: qty
+            });
+        }
+    </script>
+    <script src="particles.js"></script>
+</body>
+</html>
