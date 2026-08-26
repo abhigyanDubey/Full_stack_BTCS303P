@@ -26,7 +26,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="cart.html" class="active cart-link">Cart <span class="cart-count">3</span></a></li>
+                    <li><a href="cart.html" class="active cart-link">Cart <span class="cart-count">0</span></a></li>
                     <li><a href="checkout.html">Checkout</a></li>
                 </ul>
             </nav>
@@ -37,35 +37,35 @@
         <!-- Section Header -->
         <div class="section-header">
             <h2 class="section-title">Your Shopping <span>Cart</span></h2>
-            <p class="section-subtitle">Review your selected anime items before proceeding to checkout</p>
+            <p class="section-subtitle">Review items, adjust quantities, and calculate grand total</p>
         </div>
 
-        <!-- Cart Table & Layout (Populated Dynamically via cart.js) -->
+        <!-- Cart Table Wrapper (Lab Sheet 2 Task 4 & Task 5) -->
         <div class="cart-wrapper">
             <table class="cart-table">
                 <thead>
                     <tr>
-                        <th>Product Item</th>
+                        <th>Product Details</th>
                         <th>Unit Price</th>
                         <th>Quantity</th>
-                        <th>Subtotal</th>
-                        <th>Action</th>
+                        <th>Total</th>
+                        <th>Remove</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Rendered by cart.js -->
+                    <!-- Dynamically rendered by script.js using renderCart() -->
                 </tbody>
             </table>
 
-            <!-- Cart Summary & Totals -->
+            <!-- Cart Totals & Summary Sidebar -->
             <div class="cart-summary">
                 <div class="coupon-box">
-                    <input type="text" placeholder="Enter Promo Code (e.g. OTAKU10)" class="form-control" style="width: 220px;">
-                    <button class="btn btn-secondary" onclick="showToast('Promo code OTAKU10 applied! (10% OFF)')">Apply</button>
+                    <input type="text" placeholder="Promo / Coupon Code" class="form-control" style="width: 200px;">
+                    <button class="btn btn-secondary" onclick="showToast('Promo code applied!')">Apply</button>
                 </div>
 
                 <div class="cart-totals">
-                    <!-- Rendered by cart.js -->
+                    <!-- Dynamically calculated by calculateTotal() using reduce() -->
                 </div>
             </div>
         </div>
@@ -91,10 +91,10 @@
                 <div>
                     <h4 class="footer-title">Categories</h4>
                     <ul class="footer-links">
-                        <li><a href="products.html">Scale Figures</a></li>
-                        <li><a href="products.html">Katana Replicas</a></li>
-                        <li><a href="products.html">Cosplay & Apparel</a></li>
-                        <li><a href="products.html">Manga Sets</a></li>
+                        <li><a href="products.html">Genshin Figures</a></li>
+                        <li><a href="products.html">Honkai Star Rail</a></li>
+                        <li><a href="products.html">Lord of the Mysteries</a></li>
+                        <li><a href="products.html">Acrylic Keychains</a></li>
                     </ul>
                 </div>
                 <div>
@@ -112,8 +112,8 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="cart.js"></script>
+    <!-- Scripts (Lab Sheet 2 Requirement) -->
+    <script src="script.js"></script>
     <script src="particles.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="cart.html" class="cart-link">Cart <span class="cart-count">3</span></a></li>
+                    <li><a href="cart.html" class="cart-link">Cart <span class="cart-count">0</span></a></li>
                     <li><a href="checkout.html">Checkout</a></li>
                 </ul>
             </nav>
@@ -41,8 +41,8 @@
                 <img id="mainImage" src="https://m.media-amazon.com/images/I/71P6cDbbFuL._SL1500_.jpg" alt="PINAKA Genshin Chibi Figures" class="main-detail-img">
                 <div class="thumbnail-row">
                     <img src="https://m.media-amazon.com/images/I/71P6cDbbFuL._SL1500_.jpg" class="thumbnail active" onclick="changeImage(this.src)" alt="Thumb 1">
-                    <img src="https://m.media-amazon.com/images/I/51qkIB5rQ1L._SL1024_.jpg" class="thumbnail" onclick="changeImage(this.src)" alt="Thumb 2">
-                    <img src="https://m.media-amazon.com/images/I/61m-Zz7uJfL._SL1500_.jpg" class="thumbnail" onclick="changeImage(this.src)" alt="Thumb 3">
+                    <img src="https://genshinfans.com/cdn/shop/files/Official-Columbina-Figure_423eebf6-da9b-446b-b1af-93f507cfc8b7.jpg?v=1770267594" class="thumbnail" onclick="changeImage(this.src)" alt="Thumb 2">
+                    <img src="https://honkai.shop/cdn/shop/files/hsr-aventurine-1-7-scale-figure-3.jpg?v=1748396165" class="thumbnail" onclick="changeImage(this.src)" alt="Thumb 3">
                 </div>
             </div>
 
@@ -132,8 +132,8 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="cart.js"></script>
+    <!-- Scripts (Lab Sheet 2 Submission: script.js) -->
+    <script src="script.js"></script>
     <script>
         function changeImage(src) {
             document.getElementById('mainImage').src = src;
@@ -151,14 +151,9 @@
 
         function addDetailToCart() {
             const qty = parseInt(document.getElementById('qtyInput').value) || 1;
-            addToCart({
-                id: 'pinaka-chibi-figures',
-                name: 'PINAKA Genshin Impact Chibi Mini Action Figures Set',
-                category: 'Action Figures',
-                price: 12.99,
-                image: 'https://m.media-amazon.com/images/I/71P6cDbbFuL._SL1500_.jpg',
-                qty: qty
-            });
+            for (let i = 0; i < qty; i++) {
+                addToCart('pinaka-chibi-figures');
+            }
         }
     </script>
     <script src="particles.js"></script>

@@ -1,6 +1,6 @@
 /* ==========================================================================
    OTAKUVERSE - Anime E-Commerce Storefront Style Sheet
-   Fulfills COER University Lab Sheet 1 Requirements (Phase 1 & Phase 2)
+   Fulfills COER University Lab Sheet 1 & Lab Sheet 2 Requirements
    ========================================================================== */
 
 /* 10. CSS Custom Properties (:root) */
@@ -65,15 +65,6 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
-}
-
-/* Fallback styling for broken/loading images */
-img.img-fallback {
-    position: relative;
-    background: radial-gradient(circle, #2a1b4e 0%, #090613 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* Layout Container */
@@ -396,12 +387,6 @@ main {
     height: 2.8rem;
 }
 
-.product-rating {
-    color: #ffb703;
-    font-size: 0.85rem;
-    margin-bottom: 0.8rem;
-}
-
 .product-footer {
     display: flex;
     align-items: center;
@@ -691,7 +676,7 @@ main {
     padding-top: 1rem;
 }
 
-/* 7 & 14. Checkout Form Styling */
+/* 7 & 14. Checkout Form Styling & Inline Validation Errors */
 .checkout-grid {
     display: grid;
     grid-template-columns: 1.8fr 1fr;
@@ -724,6 +709,7 @@ main {
 
 .form-group {
     margin-bottom: 1.4rem;
+    position: relative;
 }
 
 .form-group.full-width {
@@ -761,6 +747,39 @@ main {
 textarea.form-control {
     resize: vertical;
     min-height: 90px;
+}
+
+/* Lab Sheet 2 Task 6: Inline Error Message Styling */
+.error-msg {
+    color: #ff2a74;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+}
+
+/* Lab Sheet 2 Task 7: Inline Success Box Banner */
+.success-box {
+    background: rgba(0, 255, 170, 0.08);
+    border: 1px solid var(--success);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 30px rgba(0, 255, 170, 0.2);
+}
+
+.success-box h2 {
+    font-family: var(--font-heading);
+    color: var(--success);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.success-box p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
 }
 
 /* Radio Payment Options */
