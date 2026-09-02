@@ -3,7 +3,7 @@
 **Department of Computer Science & Engineering — COER University**  
 **Course Code:** BTCS303P — Full Stack Development Laboratory  
 **Project Title:** OTAKUVERSE — Cyberpunk Anime & Gaming Storefront  
-**Repository:** [https://github.com/cu24250214-dotcom/Full_stack_BTCS303P](https://github.com/cu24250214-dotcom/Full_stack_BTCS303P)
+**Repository:** [https://github.com/cu24250059-pixel/Full_stack_BTCS303P](https://github.com/cu24250059-pixel/Full_stack_BTCS303P)
 
 ---
 
