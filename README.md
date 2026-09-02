@@ -67,12 +67,50 @@
 
 ---
 
-## 🛠️ Core JavaScript Concepts Implemented
+### 🔹 Lab Sheet 3: Rebuilding with React (Components, Props, useState)
+- **Status:** Completed  
+- **Objective:** Convert the product listing and cart into a proper React application using components, props, and state (`useState`).  
+- **Directory / Package:** [`otakuverse-react/`](./otakuverse-react/) (Built with React 19 + Vite)
 
-- **Array Methods:** `map()` (card & row generation), `filter()` (category filtering & item removal), `find()` (item lookup), `reduce()` (grand total calculation & cart count badge).
-- **DOM Manipulation:** `querySelector()`, `querySelectorAll()`, `getElementById()`, `addEventListener()`, `innerHTML`, and template literals.
-- **Browser Web Storage:** `localStorage.getItem()`, `localStorage.setItem()`, `localStorage.removeItem()`, `JSON.stringify()`, `JSON.parse()`.
-- **Form Validation & Regex:** Pattern matching for 6-digit postal pincodes (`/^\d{6}$/`) and 10-digit telephone numbers (`/^\d{10}$/`) with inline error feedback.
+#### Detailed Task Breakdown:
+1. **Task 1: Vite + React Project Setup (`otakuverse-react`)**
+   - Initialized `otakuverse-react` using `npm create vite@latest otakuverse-react -- --template react`.
+   - Installed dependencies including Lucide icons and modern bundling config.
+2. **Task 2: Mock Product Data Source (`src/data/products.js`)**
+   - Exported an array of 19 rich product objects with `id`, `name`, `category`, `categoryName`, `price`, `priceINR`, `oldPrice`, `badge`, `rating`, `reviews`, and CDN image assets.
+3. **Task 3: Functional `ProductCard` Component (`src/components/ProductCard.jsx`)**
+   - Receives a single `product` object and `onAddToCart` callback via props.
+   - Renders product badge, image with fallback onError handling, category, title, ratings, dual currency pricing (USD & INR), and 'Add to Cart' button with animated confirmation feedback.
+4. **Task 4: `ProductList` Component with Unique Keys (`src/components/ProductList.jsx`)**
+   - Imports `products.js`, maps over the array, and renders `<ProductCard key={product.id} ... />` strictly using unique `product.id` (never array index).
+   - Features real-time search input and interactive category filter tabs.
+5. **Task 5: Centralized Cart State & Lifting State Up (`src/App.jsx`)**
+   - Initialized cart state using `useState` as an array of `{ product, quantity }`.
+   - Implemented `addToCart(product)` checking existing items to increment quantity or append new entries.
+   - Persisted cart to browser `localStorage` and passed handler down via props.
+6. **Task 6: `Cart` Component (`src/components/Cart.jsx`)**
+   - Receives `cart`, `onRemoveFromCart`, `onUpdateQuantity`, `onClearCart`, and `onProceedToCheckout` via props.
+   - Renders tabular cart layout with thumbnails, titles, unit prices, interactive quantity increment/decrement controls, computed item subtotals, express shipping calculation, and grand total.
+7. **Task 7: Navbar Cart Badge & Show/Hide State Logic (`src/components/Navbar.jsx`)**
+   - Implemented `isCartOpen` modal toggle state in `App.jsx`.
+   - Dynamic navbar cart item count badge calculating `cart.reduce((sum, item) => sum + item.quantity, 0)`.
+8. **Task 8: Controlled `CheckoutForm` Component (`src/components/CheckoutForm.jsx`)**
+   - Controlled form inputs tied to `useState` for Name, Address, Pincode, Phone, and Payment Method.
+   - Real-time inline regex validation for 6-digit pincode (`/^\d{6}$/`) and 10-digit phone (`/^\d{10}$/`).
+   - Sticky live order summary sidebar and order dispatch authorization.
+9. **Task 9: Conditional Rendering & Empty Cart Fallback**
+   - If cart is empty, `Cart.jsx` conditionally renders a cyberpunk empty cart notice with a call-to-action button.
+   - Dynamic conditional view transitions between Catalog, Checkout, and Order Confirmation (`OrderConfirmation.jsx`).
+
+---
+
+## 🛠️ Core Concepts Implemented
+
+- **React Functional Components & Props:** Parent $\rightarrow$ child unidirectional data flow.
+- **State Management (`useState`):** Cart items array, UI drawer/modal toggles, search/filter inputs, form fields, and error states.
+- **Lists and Keys:** Dynamic list rendering with `.map()` using strict unique IDs (`product.id`).
+- **Conditional Rendering:** Inline ternary operators, short-circuit `&&`, and early returns for empty states and order placement.
+- **Lifting State Up:** Centralized state residing in `App.jsx` passing dispatch functions down to nested children.
 
 ---
 
@@ -80,30 +118,57 @@
 
 ```
 Full_stack_BTCS303P/
-├── README.md               <-- Complete Coursework Documentation & Lab Work Logs
-├── index.html              <-- Homepage, Hero Section & Featured Collectibles
-├── products.html           <-- Catalog Page (Dynamic JS Rendering)
-├── product-detail.html     <-- Single Product View with Image Gallery Switcher
-├── cart.html               <-- Shopping Cart Table & calculateTotal() Logic
-├── checkout.html           <-- Form Validation & Inline Order Confirmation
-├── style.css               <-- Central Stylesheet (Glassmorphism & Cyberpunk Theme)
-├── script.js               <-- Central Vanilla JS Script (Lab Sheet 2 Tasks 1-8)
-└── particles.js            <-- HTML5 Canvas 2D Particle Background
+├── README.md                  <-- Coursework Documentation & Lab Work Logs
+├── index.html                 <-- Lab 1 & 2: HTML5 Homepage
+├── products.html              <-- Lab 1 & 2: Vanilla JS Catalog
+├── product-detail.html        <-- Lab 1 & 2: Single Product View
+├── cart.html                  <-- Lab 1 & 2: Shopping Cart
+├── checkout.html              <-- Lab 1 & 2: Vanilla JS Checkout
+├── style.css                  <-- Lab 1 & 2 Stylesheet
+├── script.js                  <-- Lab 2 Vanilla JS Script
+├── particles.js               <-- HTML5 Particle Background
+└── otakuverse-react/          <-- 🚀 Lab Sheet 3: Vite + React Application
+    ├── index.html
+    ├── package.json
+    ├── vite.config.js
+    └── src/
+        ├── main.jsx           <-- React Root Mount
+        ├── App.jsx            <-- Top-Level App & State Hub (Cart, View, Modals)
+        ├── App.css            <-- Component Stylesheet & Cyberpunk Theme
+        ├── index.css          <-- CSS Custom Properties & Base Resets
+        ├── data/
+        │   └── products.js    <-- Task 2: 19 Product Objects Catalog Data
+        └── components/
+            ├── Navbar.jsx     <-- Task 7: Header & Cart Toggle Badge
+            ├── Hero.jsx       <-- Storefront Banner & Guarantees
+            ├── ProductCard.jsx<-- Task 3: Single Product Card
+            ├── ProductList.jsx<-- Task 4: Filterable Dynamic Product Grid
+            ├── Cart.jsx       <-- Task 6 & 9: Tabular Cart & Empty State
+            ├── CheckoutForm.jsx<-- Task 8: Controlled Inputs & Validation
+            ├── OrderConfirmation.jsx <-- Order Receipt & Tracking ID
+            ├── ParticleCanvas.jsx   <-- Animated Canvas Background
+            ├── Toast.jsx      <-- Real-Time Added to Cart Feedback
+            └── Footer.jsx     <-- Coursework Attribution & Links
 ```
 
 ---
 
 ## 🚀 How to Run Locally
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/cu24250214-dotcom/Full_stack_BTCS303P.git
-   ```
-2. **Navigate to the project folder:**
-   ```bash
-   cd Full_stack_BTCS303P
-   ```
-3. **Open the project:**
-   - Simply double click `index.html` or `products.html` to open in any web browser (Chrome, Edge, Firefox, Safari).
-   - Or run with VS Code Live Server extension.
+### 1. Static Storefront (Lab 1 & 2 - HTML5/CSS3/Vanilla JS)
+- Double click `index.html` in any browser or launch with Live Server.
+
+### 2. React Storefront (Lab Sheet 3 - React + Vite)
+```bash
+# Navigate to the React project directory
+cd otakuverse-react
+
+# Install dependencies (if not already installed)
+npm install
+
+# Start the Vite development server
+npm run dev
+```
+Open your browser at `http://localhost:5173`.
+
 

@@ -1,0 +1,110 @@
+/* ==========================================================================
+   OTAKUVERSE - Global Base & CSS Custom Properties (:root)
+   ========================================================================== */
+
+:root {
+  --primary-color: #ff2a74;       /* Neon Sakura Pink */
+  --primary-hover: #ff4d8d;
+  --secondary-color: #00f0ff;     /* Cyber Cyan */
+  --secondary-hover: #40f4ff;
+  --accent-color: #9d4edd;        /* Spirit Violet */
+  --accent-glow: rgba(157, 78, 221, 0.4);
+  --bg-dark: #090613;             /* Deep Cyber Dark */
+  --bg-dark-secondary: #120b22;
+  --bg-card: rgba(22, 14, 38, 0.88); /* Glassmorphic Translucent Dark */
+  --bg-card-hover: rgba(35, 22, 61, 0.96);
+  --border-glow: rgba(255, 42, 116, 0.3);
+  --border-cyan: rgba(0, 240, 255, 0.4);
+  --border-active: rgba(0, 240, 255, 0.7);
+  --text-primary: #ffffff;
+  --text-secondary: #b8b3d0;
+  --text-muted: #7e789d;
+  --success: #00ffaa;
+  --warning: #ffb703;
+  --font-heading: 'Orbitron', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 50px;
+  --transition-fast: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-neon: 0 0 20px rgba(255, 42, 116, 0.35);
+  --shadow-cyan: 0 0 20px rgba(0, 240, 255, 0.35);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Base & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 42, 116, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
