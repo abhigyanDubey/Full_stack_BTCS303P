@@ -1,0 +1,6 @@
+node_modules/
+package-lock.json
+student.txt
+profile.txt
+large-file.txt
+uploads/

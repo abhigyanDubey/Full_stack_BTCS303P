@@ -1,0 +1,33 @@
+{
+  "name": "lab4-nodejs",
+  "version": "1.0.0",
+  "description": "Lab Sheet 4 - Node.js Core Modules & Native HTTP Server (Abhigyan Dubey - CU24250059)",
+  "main": "app1.js",
+  "scripts": {
+    "task1": "node app1.js",
+    "task2": "node file-ops.js",
+    "task3": "node dir-ops.js",
+    "task4": "node path-demo.js",
+    "task5": "node sys-report.js",
+    "task6": "node order-events.js",
+    "task7": "node server.js",
+    "task9": "node stream-demo.js",
+    "task10": "node id-gen.js",
+    "task11": "node calc-cli.js 10 5 +",
+    "task12": "node env-demo.js"
+  },
+  "keywords": [
+    "nodejs",
+    "fs",
+    "path",
+    "os",
+    "events",
+    "http",
+    "streams"
+  ],
+  "author": "Abhigyan Dubey (CU24250059)",
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^3.3.8"
+  }
+}

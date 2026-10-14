@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express Lab 5 - Static File</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .card {
+      background: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 { color: #0066cc; }
+    ul { line-height: 1.8; }
+    code { background: #eee; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Express Lab Running</h1>
+    <p>Static file served successfully via <code>express.static(path.join(__dirname, "public"))</code>.</p>
+    <h3>Available Lab 5 API Endpoints:</h3>
+    <ul>
+      <li><code>GET /about</code> - Returns student identity JSON</li>
+      <li><code>GET /courses</code> - Returns array of available courses</li>
+      <li><code>POST /echo</code> - Echoes JSON request payload</li>
+      <li><code>GET /search?name=Dev&age=20</code> - Query parameter demonstration</li>
+      <li><code>GET /products/:category/:id</code> - Route parameters demonstration</li>
+      <li><code>GET /admin/dashboard</code> - Requires <code>x-api-key</code> header</li>
+      <li><code>POST /register</code> &amp; <code>POST /contact</code> - JSON &amp; form body parsing</li>
+      <li><code>GET /api/students</code> &amp; <code>GET /api/students/:id</code> - Student modular router</li>
+      <li><code>GET /api/books</code> &amp; <code>GET /api/books/:id</code> - Books modular router</li>
+      <li><code>/api/tasks</code> - CRUD Task REST API (GET, POST, PUT, DELETE)</li>
+    </ul>
+  </div>
+</body>
+</html>
